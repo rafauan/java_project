@@ -1,5 +1,6 @@
 package com.company;
 
 public class Human {
-    Animal pet = new Animal("dog");
+    Animal pet;
+    Car car;
 }

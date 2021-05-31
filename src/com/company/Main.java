@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 	    Human John = new Human();
 	    John.pet = new Animal("elephant");
+	    John.car = new Car("Cayenne", "Porsche", "Red", 2009);
 
         John.pet.feed();
 	    John.pet.takeForAWalk();
@@ -17,7 +18,7 @@ public class Main {
             John.pet.takeForAWalk();
         }
 
-        System.out.println(John.pet.getWeight());
+        System.out.println(John.car.model);
 
     }
 }
