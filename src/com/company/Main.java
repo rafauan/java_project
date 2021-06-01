@@ -26,8 +26,5 @@ public class Main {
         John.getSalary();
         John.setSalary(3500.0);
         John.getSalary();
-
-        System.out.println(John.salaryGettersList);
-
     }
 }
