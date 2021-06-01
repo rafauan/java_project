@@ -1,9 +1,15 @@
 package com.company;
+import com.devices.Car;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 
 public class Human {
+
+    public static void main(String[] args) {
+        Car car = new Car("Cayenne", "Porsche", "Red", 2009, 35000.0);
+    }
+
     Animal pet;
     private Car car;
     private Double salary;
@@ -58,5 +64,9 @@ public class Human {
         } else {
             System.out.println("Nie masz wystarczająco środków na kupno tego samochodu, zapisz się na studia, znajdź nową robotę albo idź po podwyżkę.");
         }
+    }
+
+    public String toString() {
+        return pet + " " + car + " " + salary + " " + salaryDate;
     }
 }

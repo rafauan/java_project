@@ -47,4 +47,8 @@ public class Animal {
             weight -= 1;
         }
     }
+
+    public String toString() {
+        return species + " " + weight;
+    }
 }
