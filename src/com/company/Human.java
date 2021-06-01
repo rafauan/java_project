@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Human {
 
     public static void main(String[] args) {
-        Car car = new Car("Cayenne", "Porsche", "Red", 2009, 35000.0);
+        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
     }
 
     Animal pet;

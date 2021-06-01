@@ -9,8 +9,8 @@ public class Main {
 
         Animal dog = new Animal("dog");
 
-	    Car car = new Car("Cayenne", "Porsche", "Red", 2009, 35000.0);
-        Car car2 = new Car("Cayenne", "Porsche", "Red", 2009, 35000.0);
+        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
+        Car car2 = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
 
         John.pet = dog;
 
@@ -23,6 +23,8 @@ public class Main {
 
         System.out.println(dog.toString());
         System.out.println(John.toString());
+
+        System.out.println(car.turnOn());
 
     }
 }

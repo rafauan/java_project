@@ -1,17 +1,13 @@
 package com.devices;
 
-public class Car {
-    public final String model;
-    public final String producer;
+public class Car extends Device {
+
     public final String color;
-    public final Integer yearOfProduction;
     public Double value;
 
-    public Car(String model, String producer, String color, Integer yearOfProduction, Double value) {
-        this.model = model;
-        this.producer = producer;
+    public Car(String producer, Integer yearOfProduction, String model, String color, Double value) {
+        super(producer, yearOfProduction, model);
         this.color = color;
-        this.yearOfProduction = yearOfProduction;
         this.value = value;
     }
 
@@ -34,6 +30,11 @@ public class Car {
 
     public String toString() {
         return model + " " + producer + " " + color + " " + yearOfProduction + " " + value;
+    }
+
+    @Override
+    public String turnOn() {
+        return "Działa";
     }
 }
 
