@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Human {
     Animal pet;
-    Car car;
+    private Car car;
     private Double salary;
     SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     Date salaryDate = new Date();
@@ -29,7 +29,7 @@ public class Human {
         String dateInConsole;
         String salaryInConsole;
 
-        if(salaryGettersList.size() > 3) {
+        if(salaryGettersList.size() > 4) {
             dateInConsole = salaryGettersList.get(salaryGettersList.size() - 4);
             salaryInConsole = salaryGettersList.get(salaryGettersList.size() - 3);
         } else {
@@ -40,5 +40,23 @@ public class Human {
         System.out.println("Data ostatniego przeglądu stanu konta: " + dateInConsole);
         System.out.println("Ostatni stan konta: " + salaryInConsole);
         return salary;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        Double salaryNow = getSalary();
+
+        if(salaryNow > car.value) {
+            System.out.println("Udało Ci się kupić samochód za gotówkę!");
+            this.car = car;
+        } else if(salaryNow > car.value / 12) {
+            System.out.println("Udało Ci się kupić samochód na kredyt (no trudno).");
+            this.car = car;
+        } else {
+            System.out.println("Nie masz wystarczająco środków na kupno tego samochodu, zapisz się na studia, znajdź nową robotę albo idź po podwyżkę.");
+        }
     }
 }
