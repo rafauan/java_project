@@ -12,9 +12,18 @@ public class Main {
 
         Phone phone = new Phone("Apple", 2020, "iPhone 12 Pro");
 
-        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
-        Car car2 = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
+        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0) {
+            @Override
+            public void refuel() {
 
+            }
+        };
+        Car car2 = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
 
         John.phone = phone;
         John.cash = 500.0;

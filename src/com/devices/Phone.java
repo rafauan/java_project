@@ -2,7 +2,11 @@ package com.devices;
 
 import com.company.Human;
 
-public class Phone extends Device implements Human.salleable {
+public class Phone<serverAddress, protocol, version> extends Device implements Human.salleable {
+    final static String serverAddress = "https://test.net";
+    final static String protocol = "3333";
+    final static Double version = 1.0;
+
     public Phone(String producer, Integer yearOfProduction, String model) {
         super(producer, yearOfProduction, model);
     }
@@ -34,4 +38,25 @@ public class Phone extends Device implements Human.salleable {
             System.out.println("Sprzedany telefon to: " + buyer.phone.model);
         }
     }
+
+    public String installAnnApp(String appName) {
+        return appName;
+    }
+
+    public String installAnnApp(String appName, String appVersion) {
+        return appVersion;
+    }
+
+    public String installAnnApp(String appName, String appVersion, String serverAddress) {
+        return serverAddress;
+    }
+
+    public URL installAnnApp(URL app) {
+        return app;
+    }
+
+
+
+
+
 }

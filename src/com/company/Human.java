@@ -10,7 +10,12 @@ import java.util.ArrayList;
 public class Human {
 
     public static void main(String[] args) {
-        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
+        Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
         Animal pet = new Animal("pies") {};
     }
 
