@@ -1,6 +1,7 @@
 package com.company;
 import com.devices.Car;
 import com.devices.Phone;
+import com.creatures.Animal;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,6 +11,7 @@ public class Human {
 
     public static void main(String[] args) {
         Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
+        Animal pet = new Animal("pies") {};
     }
 
     public Animal pet;

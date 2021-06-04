@@ -1,6 +1,7 @@
-package com.company;
+package com.creatures;
+import com.company.Human;
 
-public class Animal implements Human.salleable {
+public abstract class Animal extends FarmAnimal implements Human.salleable {
 
     final String species;
     private Double weight;
@@ -52,7 +53,6 @@ public class Animal implements Human.salleable {
         return species + " " + weight;
     }
 
-
     @Override
     public void sell(Human seller, Human buyer, Double price) {
         if(buyer.cash < price) {
@@ -70,5 +70,10 @@ public class Animal implements Human.salleable {
             System.out.println("Stan konta sprzedającego: " + seller.cash + " zł");
             System.out.println("Sprzedany zwierzak to: " + buyer.pet.species);
         }
+    }
+
+    public interface Feedable {
+        void feed();
+        void feed(Double foodWeight);
     }
 }
