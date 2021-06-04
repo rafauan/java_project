@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Human.salleable {
 
     final String species;
     private Double weight;
@@ -9,15 +9,15 @@ public class Animal {
         this.species = species;
         weight = getWeight();
 
-        if (species.equals("dog")) {
+        if (species.equals("pies")) {
             setWeight(10.0);
         }
 
-        if (species.equals("cat")) {
+        if (species.equals("kot")) {
             setWeight(2.5);
         }
 
-        if (species.equals("elephant")) {
+        if (species.equals("słoń")) {
             setWeight(104.00);
         }
     }
@@ -50,5 +50,25 @@ public class Animal {
 
     public String toString() {
         return species + " " + weight;
+    }
+
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(buyer.cash < price) {
+            System.out.println("Kupujący " + buyer.firstName + " nie ma wystarczająco pieniędzy!");
+        } else if(seller.pet == null) {
+            System.out.println("Sprzedający " + buyer.firstName + " nie ma posiada żadnego zwierzaka!");
+        } else {
+            buyer.pet = seller.pet;
+            seller.pet = null;
+            seller.cash += price;
+            buyer.cash -= price;
+            System.out.println("Użytkownik " + seller.firstName + " sprzedał zwierzaka użytkownikowi " + buyer.firstName);
+            System.out.println("Cena zwierzaka " + price + " zł");
+            System.out.println("Stan konta kupującego: " + buyer.cash + " zł");
+            System.out.println("Stan konta sprzedającego: " + seller.cash + " zł");
+            System.out.println("Sprzedany zwierzak to: " + buyer.pet.species);
+        }
     }
 }

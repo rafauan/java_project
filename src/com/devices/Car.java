@@ -1,6 +1,8 @@
 package com.devices;
 
-public class Car extends Device {
+import com.company.Human;
+
+public class Car extends Device implements Human.salleable {
 
     public final String color;
     public Double value;
@@ -35,6 +37,23 @@ public class Car extends Device {
     @Override
     public String turnOn() {
         return "Działa";
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(buyer.cash < price) {
+            System.out.println("Kupujący nie ma wystarczająco pieniędzy!");
+        } else {
+            buyer.carToSell = seller.carToSell;
+            seller.carToSell = null;
+            seller.cash += price;
+            buyer.cash -= price;
+            System.out.println("Użytkownik " + seller.firstName + " sprzedał samochód użytkownikowi " + buyer.firstName);
+            System.out.println("Cena samochodu " + price + " zł");
+            System.out.println("Stan konta kupującego: " + buyer.cash + " zł");
+            System.out.println("Stan konta sprzedającego: " + seller.cash + " zł");
+            System.out.println("Sprzedany samochod to: " + buyer.carToSell);
+        }
     }
 }
 

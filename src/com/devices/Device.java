@@ -1,6 +1,7 @@
 package com.devices;
 
-public abstract class Device {
+import com.company.Human;
+public abstract class Device implements Human.salleable {
     public final String producer;
     public final Integer yearOfProduction;
     public final String model;
@@ -16,5 +17,8 @@ public abstract class Device {
     }
 
     public abstract String turnOn();
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) { }
 
 }

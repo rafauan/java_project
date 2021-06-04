@@ -1,5 +1,7 @@
 package com.company;
 import com.devices.Car;
+import com.devices.Phone;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
@@ -10,13 +12,18 @@ public class Human {
         Car car = new Car("Porsche", 2020, "Cayenne", "Red", 35000.0);
     }
 
-    Animal pet;
+    public Animal pet;
+    public Phone phone;
     private Car car;
+    public Car carToSell;
     private Double salary;
+    public Double cash;
+    public String firstName;
     SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     Date salaryDate = new Date();
     String lastSalaryDate = dateFormatter.format(salaryDate);
     ArrayList<String> salaryGettersList = new ArrayList<String>();
+
 
     public void setSalary(Double salary){
         if(salary < 0.0) {
@@ -66,7 +73,15 @@ public class Human {
         }
     }
 
+    public void buyCar(Car car) {
+        this.car = car;
+    }
+
     public String toString() {
-        return pet + " " + car + " " + salary + " " + salaryDate;
+        return pet + " " + phone + " " + car + " " + salary + " " + salaryDate;
+    }
+
+    public interface salleable {
+        void sell(Human seller, Human buyer, Double price);
     }
 }
